@@ -34,7 +34,7 @@ class Calculadora:
     def dividir(self, valor:float):
         self.__definir_historico()
         try:
-            self.registrador /= valor
+            self.__registrador /= valor
         except ZeroDivisionError:
             self.__registrador = 0.0
     def multiplicar(self, valor:float):
