@@ -3,4 +3,4 @@ class Conta:
         self.conta = conta
 
 a = Conta('Corrente')
-print(a.conta)
+print(a.conta) #Acesso a propriedade por meio da referencia ao objeto
