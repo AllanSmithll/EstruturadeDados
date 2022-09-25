@@ -1,5 +1,6 @@
 class Carta:
     def __init__(self, naipe, cor, valor):
+        #Definir as propriedades da classe
         self.__naipe = naipe
         self.__cor =  cor
         self.__valor = valor
