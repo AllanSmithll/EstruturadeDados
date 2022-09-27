@@ -11,7 +11,7 @@ def c():
     d()
 
 def d():
-    print("4")
+    print("4 ")
 
 
 print("Início")
