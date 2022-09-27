@@ -1,7 +1,7 @@
 '''
 #MÉTODOS GET() E SET()
 
-get() -> recupera o valor de uma propriedade privada
+get() -> acessa e recupera o valor de uma propriedade privada
 
 def get<nome_atributo_privado>(self):
     return self.__<nome_atributo_privado>
