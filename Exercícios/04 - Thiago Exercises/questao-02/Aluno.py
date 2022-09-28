@@ -7,4 +7,28 @@ class Aluno:
     def getnome(self):
         return self.__nome
     
-#    def getmatricula(self):
+    def getmatricula(self):
+        return f"{self.__matricula}"
+
+    def Media(self):
+        s = 0
+        for i in self.__notas:
+            s += i
+
+        media = s / len(self.__notas)
+        return media
+
+    def set_nome(self, novoNome):
+        self.__nome = novoNome
+        return self.__nome
+
+    def addNota(self):
+        quantas = int(input("Quantas notas? "))
+        return quantas
+        for i in range(quantas):
+            add = input("Notas: ")
+        add.append(self.__notas)
+        return add
+
+    def __str__(self):
+        return f"{self.__matricula};\n Nome: {self.__nome};\n {self.__notas}"
