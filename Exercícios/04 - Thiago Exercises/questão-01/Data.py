@@ -16,4 +16,7 @@ class Data:
         self.__ano = novoAno
 
     def __str__(self):
-        return f"Hoje é {self.__dia}/{self.__mes}/{self.__ano}"
+        if self.__mes > 9:
+            return f"Hoje é {self.__dia}/{self.__mes}/{self.__ano}"
+        else:
+            self.__mes = self
