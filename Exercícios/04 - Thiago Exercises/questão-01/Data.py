@@ -18,5 +18,3 @@ class Data:
     def __str__(self):
         if self.__mes > 9:
             return f"Hoje é {self.__dia}/{self.__mes}/{self.__ano}"
-        else:
-            self.__mes = self
