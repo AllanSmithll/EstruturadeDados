@@ -22,13 +22,13 @@ class Aluno:
         self.__nome = novoNome
         return self.__nome
 
-    def addNota(self):
-        quantas = int(input("Quantas notas? "))
-        return quantas
+    def addNota(self, novasNotas: float):
+        novasNotas = []
+        quantas = int(input("Quantas notas: "))
         for i in range(quantas):
-            add = input("Notas: ")
-        add.append(self.__notas)
-        return add
+            notas = float(input("Nota: "))
+            novasNotas.append(notas)
+        return novasNotas
 
     def __str__(self):
         return f"{self.__matricula};\n Nome: {self.__nome};\n {self.__notas}"
