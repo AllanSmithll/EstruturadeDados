@@ -26,7 +26,7 @@ else:
 print('Programa finalizado com sucesso! ') 
 
 # O ruim dessa forma de programar é que, mesmo que o erro já aconteça na estrutura de decisão, o programa ainda assim é executado como se nada de ruim estivesse acontecendo.
-# Como assim? Vamos ver outra forma de resolver essa questão da DIVISÃO POR ZERO com POO
+# Como assim? Vamos ver outra forma de resolver essa questão da DIVISÃO POR ZERO COM POO
 
 a = int(input("a: "))
 b = int(input("b: "))
