@@ -4,31 +4,22 @@ class Aluno:
         self.__nome = nome
         self.__notas = notas
 
+    @property
     def getnome(self):
         return self.__nome
     
+    @property
     def getmatricula(self):
-        return f"{self.__matricula}"
+        return self.__matricula
 
-    def Media(self):
-        s = 0
-        for i in self.__notas:
-            s += i
+    @property
+    def getNotas(self):
+        return self.__notas
 
-        media = s / len(self.__notas)
-        return media
-
-    def set_nome(self, novoNome):
-        self.__nome = novoNome
-        return self.__nome
-
-    def addNota(self, novasNotas: float):
-        novasNotas = []
-        quantas = int(input("Quantas notas: "))
-        for i in range(quantas):
-            notas = float(input("Nota: "))
-            novasNotas.append(notas)
-        return novasNotas
+    def addNota(self, novaNota):
+        if novaNota not in self.__notas:
+            self.__notas.append(novaNota)
+        
 
     def __str__(self):
         return f"{self.__matricula};\n Nome: {self.__nome};\n {self.__notas}"
