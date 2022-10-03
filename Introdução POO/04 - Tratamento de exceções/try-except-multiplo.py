@@ -1,6 +1,9 @@
 # MULTIPLAS EXCEÇÕES
 # E quando tratamos de múltiplas exceções? Como fica?
 
+from ctypes.wintypes import MSG
+
+
 try:
     num = int(input("Digite um número: "))
     y = 1/num
@@ -14,3 +17,21 @@ except:  #Tratamento genérico
 print("Fim do programa")
 
 # Sendo assim, é possível tratar de várias exceções por meio de vários except
+
+# Bloco ELSE opcional
+
+n = 2
+try:
+    n = 1 / n
+    print("Valor de y =", y)
+except ZeroDivisionError:
+    print("Divisão por zero inválida.") 
+    msg = None
+else:
+    print("Tudo ocorreu bem.")
+    msg = n
+finally:
+    print("Souka souka")
+    msg = n
+print(msg)
+    
