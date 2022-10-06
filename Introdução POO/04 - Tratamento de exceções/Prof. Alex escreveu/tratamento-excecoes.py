@@ -1,6 +1,8 @@
+# 06/10/2022
+
 def lerConteudo( fileName):
     stream = open(fileName,'rt')
-    linhas = stream.readlines()
+    linhas = stream.readlines()  # Professor criou um método que lê um arquivo de texto, retorando as linhas desse tal arquivo
     stream.close()
     return linhas
 
@@ -8,7 +10,7 @@ try:
     while(True):
         print('''
         (1) Erro de lógica de Programação
-        (2) Erros de condição do ambiente de execução do software
+        (2) Erros de condição do ambiente de execução do software  # Escolhendo a opção de erro
         (3) Erros graves que não permitem recuperação
         --------------------------------------------------''')
         opcao = int(input('opcao: '))
@@ -31,11 +33,12 @@ try:
             break
 
 except IndexError:
-    print("Por favor, digite um índice válido.")
+    print("Por favor, digite um índice válido.")   # Se o índice for inválido
 except ValueError:
-    print("Por favor, digite um valor inteiro.")
-except:
-    print("Não possível acessar as notas.")
+    print("Por favor, digite um valor inteiro.")  # Se não digitar um número inteiro
+except Exception as e:   
+    print('Mensagem:', e)
+    print("Classe da exceção:", e.__class__)   # Diz a classe da exceção(o tipo de exceção)
         
 
 print('\n###### Chegamos ao final do programa ########')
