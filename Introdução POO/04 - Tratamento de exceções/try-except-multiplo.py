@@ -1,8 +1,6 @@
 # MULTIPLAS EXCEÇÕES
 # E quando tratamos de múltiplas exceções? Como fica?
 
-from ctypes.wintypes import MSG
-
 
 try:
     num = int(input("Digite um número: "))
