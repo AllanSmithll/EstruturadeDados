@@ -1,14 +1,22 @@
+# 06/10/2022
+class ContaBloqueadaException(Exception):
+    def __init__(self, msg):
+        super().__init__(msg)
+
 class Conta:
     # construtor parametrizado da classe
     def __init__(self, agencia, conta):
         self.agencia = agencia
         self.conta = conta
         self.digito = self.__geraDigito(conta)
-        self.__saldo = 1000
+        self.__saldo = 100
+        self.bloqueado = False
     
     # método de instância público
     def sacar(self, valor):
-        assert self.__saldo - valor >= 0
+        if self.bloqueado == True:
+            raise ContaBloqueadaException("Infelizmente, a conta está bloqueada.")
+        assert self.__saldo - valor >= 0, 'Saldo insuficiente para saque.'
         self.__saldo -= valor
 
     # método de instância privado
@@ -25,4 +33,11 @@ class Conta:
 if __name__ == '__main__':
     c1 = Conta('1010','4561')
     print(c1)
-    c1.sacar(200 )
+    try:
+        c1.__saldo = 500
+        c1.sacar(100)
+        print(c1)
+    except AssertionError as ae:
+        print(ae)
+    except ContaBloqueadaException as cbe:
+        print(cbe)
