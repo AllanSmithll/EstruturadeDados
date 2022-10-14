@@ -1,14 +1,8 @@
 # 10/10/2022
 # Contagem de caracteres, trabalhar com arrays
 
-def lengthstr(str) -> int:
-  if (str == ''):
+def lengthStr(str) -> int:
+  if (lengthStr(str) == 0):
     return
   else:
-    print(str[0], end='')
-    print(lengthstr[1:])
-
-# Programa Principal
-
-str = "Aguarde sensacionais revelações"
-print(str)
+    
