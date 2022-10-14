@@ -23,3 +23,18 @@ def fatorial(n):
 
 
 print(fatorial(4))
+
+# Versões compactadas recursivas
+
+def fatorial2(n) -> int:
+    if (n == 0):
+        return 1
+    else:
+        return (n * fatorial2(n-1))
+
+print(fatorial2(6))
+
+def fatorial3(n) -> int:
+    return 1 if n == 0 else n * fatorial3(n-1) 
+
+print(fatorial3(8))
