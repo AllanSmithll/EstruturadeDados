@@ -2,7 +2,10 @@
 # Contagem de caracteres, trabalhar com arrays
 
 def lengthStr(str) -> int:
-  if (lengthStr(str) == 0):
-    return
+  if (str == ''):
+    return 0
   else:
-    
+    return 1 + lengthStr(str[1:])
+
+string = "Allan"
+print(lengthStr(string))
