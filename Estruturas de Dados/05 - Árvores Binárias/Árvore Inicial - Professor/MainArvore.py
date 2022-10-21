@@ -1,0 +1,15 @@
+from ArvoreBinaria import ArvoreBinaria, Origem
+
+arv = ArvoreBinaria()
+arv2 = ArvoreBinaria("A")
+arv.descerDireita()
+arv.addFilhoEsquerdo("D")
+arv.descerEsquerda()
+print('Cursor: ', arv.getCursor())
+arv.addFilhoEsquerdo("G")
+arv.descerEsquerda()
+print('Cursor: ', arv.getCursor())
+arv.addFilhoDireito('H')
+arv.addFilhoEsquerdo()
+print("Len:", len(arv))
+print("Len:", len(arv2))
