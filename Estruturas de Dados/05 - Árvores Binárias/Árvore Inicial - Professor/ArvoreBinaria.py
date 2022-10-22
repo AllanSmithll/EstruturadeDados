@@ -1,6 +1,5 @@
 from enum import Enum
 
-
 class No:
     def __init__(self,carga:any):
         self.carga = carga
@@ -10,17 +9,20 @@ class No:
     def __str__(self):
         return str(self.carga)
 
-
+ 
 class Origem(Enum):
     RAIZ = 1
     CURSOR = 2
 
 class ArvoreBinaria:        
-    def __init__(self, carga_da_raiz: any = None):
+    def __init__(self, carga_da_raiz:any = None):
         self.__raiz = No(carga_da_raiz) if carga_da_raiz != None else carga_da_raiz
         print(self.__raiz)
         self.__cursor = self.__raiz
 
+    def criarRaiz(self, carga_da_raiz:any):
+        if self.__raiz is None:
+            self.__raiz = No(carga_da_raiz)
 
     def estaVazia(self)->bool:
         return self.__raiz == None
@@ -42,7 +44,7 @@ class ArvoreBinaria:
             self.__preordem(self.__raiz)
         elif origem == Origem.CURSOR:
             self.__preordem(self.__cursor)
-        
+
     def __preordem(self, no):
         if no is None:
             return
@@ -57,81 +59,109 @@ class ArvoreBinaria:
         if no is None:
             return
         self.__emordem(no.esq)
-        self.__preordem(no.esq)
-        self.__preordem(no.dir)
-
+        print(f'{no.carga}', end=' ')
+        self.__emordem(no.dir)
 
     def posordem(self):
-        pass
+        self.__posordem(self.__raiz)
 
     def __posordem(self, no):
         if no is None:
             return
+        self.__posordem(no.esq)
+        self.__posordem(no.dir)
         print(f'{no.carga}', end=' ')
-        self.__preordem(no.esq)
-        self.__preordem(no.dir)
 
 
     def descerEsquerda(self):
-        if self.__cursor is not None:
-            self.__cursor = self.__cursor
+        if self.__cursor is not None and \
+           self.__cursor.esq is not None:
+           self.__cursor = self.__cursor.esq
 
     def descerDireita(self):
-        pass
-
+        if self.__cursor is not None and \
+           self.__cursor.dir is not None:
+           self.__cursor = self.__cursor.dir
 
     def resetCursor(self):
-        pass
+        self.__cursor = self.__raiz
 
     def addFilhoEsquerdo(self, carga)->bool:
-        pass
+        if self.__cursor is not None:
+            if self.__cursor.esq is None:
+                self.__cursor.esq = No(carga)
+                return True
+        else:
+            return False
     
     def addFilhoDireito(self, carga)->bool:
-        pass
+        if self.__cursor is not None:
+            if self.__cursor.dir is None:
+                self.__cursor.dir = No(carga)
+                return True
+        else:
+            return False
+
+    def __count(self, no:No)->int:
+        
+        if no is None:
+            return 0
+        return 1 + self.__count(no.esq)+self.__count(no.dir)
+        
 
     def __len__(self):
-        pass
+        return self.__count(self.__raiz)
 
-    def busca(self, chave ):
-        pass
+    def busca(self, chave:any ):
+        return self.__busca(chave, self.__raiz)
     
-    def __busca(self, chave, node):
-        pass
+    def __busca(self, chave, no:No):
+        if no is None:
+            return False
+        if no.carga == chave:
+            return True
+        if ( self.__busca(chave, no.esq)):
+            return True
+        else:
+            return self.__busca(chave, no.dir)
+
+    def removeNo(self, chave:any):
+        if self.__cursor is None:
+            return
+        # verificar se a chave esta na esquerda ou na direita do cursor
+        if self.__cursor.esq is not None and self.__cursor.esq.carga == chave:
+            if self.__cursor.esq.esq == None and \
+               self.__cursor.esq.dir == None:
+                self.__cursor.esq = None
+
+        elif self.__cursor.dir is not None and self.__cursor.dir.carga == chave:
+            if self.__cursor.dir.esq == None and \
+               self.__cursor.dir.dir == None:
+                self.__cursor.dir = None
+
+
         
-    def go(self, chave:int ):
-        pass
+    def go(self, chave:int )->No:
+        return self.__go(chave,self.__raiz)
     
-    def __go(self, chave:int, node:No)->No:
-        pass
+    def __go(self, chave:int, no:No)->No:
+        if no is None:
+            return None
+        if no.carga == chave:
+            return no
+        resultado = self.__go(chave, no.esq)
+        if ( resultado ):
+            return resultado
+        else:
+            return self.__go(chave, no.dir)
 
-if __name__ == '__main__':
-    arv = ArvoreBinaria(2)
-    print('Criada a árvore')
-    arv.addFilhoEsquerdo(7)
-    arv.addFilhoDireito(5)
-    print('Raiz: ', arv.getRaiz())
-    print('Cursor: ', arv.getCursor())
-    print('Tamanho: ', len(arv))
-    arv.descerEsquerda()
-    arv.addFilhoEsquerdo(9)
-    arv.descerEsquerda()
-    arv.addFilhoDireito(3)
 
-    print('Raiz: ', arv.getRaiz())
-    print('Cursor: ', arv.getCursor())
-    print('Tamanho: ', len(arv))
+    def  removeRaiz(self)->bool:
+        '''Só remove a raiz se a árvore tiver apenas a raiz'''
+        if (len(self) == 1):
+            self.__raiz = self.__cursor = None
+            return True
+        else:
+            return False
 
-    arv.resetCursor()
-    arv.descerDireita()
-    arv.addFilhoEsquerdo(10)
 
-    print()
-    arv.preordem()
-
-    print('Raiz: ', arv.getRaiz())
-    print('Cursor: ', arv.getCursor())
-    print('Tamanho: ', len(arv))
-
-    print('Busca:', arv.busca(3))
-    no = arv.go(3)
-    print('go:', no)
