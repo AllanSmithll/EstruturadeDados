@@ -1,4 +1,4 @@
-from No import No
+from No import No   # Importando a clase No
 
 def preordem(no_inicial):
     if no_inicial is None:
@@ -7,6 +7,14 @@ def preordem(no_inicial):
     preordem(no_inicial.esq)
     preordem(no_inicial.dir)
 
+    '''
+    Pré ordem:
+        1- Primeiramente, vê se o nó raiz é None. Se for, retorna uma árvore vazia. Caso não, imprime a raiz e continua a percorrer a árvore.
+        2- Depois, vai para a subárvore (filho da raiz) esquerda e imprime. Continua a percorrer, o lado esquerdo de cada subárvore (neto, bisneto da raiz) e imprime. Caso não tenha mais como precorrer pela esquerda, volta para o nó pai (o que estiver acima).
+        3 - Por fim, percorre pelo filho direito de cada subárvore, imprimindo cada um dos elementos da direita.
+        4 - Quando acabar os nós filhos e netos da subárvore esquerda da raiz, volta pra raiz r e faz o mesmo percurso, só que na subárvore direita da raiz.
+    '''
+
 
 def emordem(no_inicial):
     if no_inicial is None:
@@ -14,6 +22,15 @@ def emordem(no_inicial):
     emordem(no_inicial.esq)
     print(f'{no_inicial.carga}', end=' ')
     emordem(no_inicial.dir)
+
+    '''
+    Em ordem:
+        1- Começa da subárvore (filho da raiz) esquerda e imprime. Continua a percorrer, o lado esquerdo de cada subárvore (neto, bisneto da raiz) e imprime. Caso não tenha mais como precorrer pela esquerda, volta para o nó pai (o que estiver acima).
+        1- Primeiramente, vê se o nó raiz é None. Se for, retorna uma árvore vazia. Caso não, imprime a raiz e continua a percorrer a árvore.
+        2- Depois, vai para a subárvore (filho da raiz) esquerda e imprime. Continua a percorrer, o lado esquerdo de cada subárvore (neto, bisneto da raiz) e imprime. Caso não tenha mais como precorrer pela esquerda, volta para o nó pai (o que estiver acima).
+        3 - Por fim, percorre pelo filho direito de cada subárvore, imprimindo cada um dos elementos da direita.
+        4 - Quando acabar os nós filhos e netos da subárvore esquerda da raiz, volta pra raiz r e faz o mesmo percurso, só que na subárvore direita da raiz.
+    '''
 
 
 def posordem(no_inicial):

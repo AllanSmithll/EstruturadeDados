@@ -1,3 +1,4 @@
+# Classe que serve como criador do nó, ou carga
 class No:
     def __init__(self, carga:any):
         self.carga = carga
