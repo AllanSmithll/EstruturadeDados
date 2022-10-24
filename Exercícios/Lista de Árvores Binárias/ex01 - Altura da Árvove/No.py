@@ -14,5 +14,4 @@ class No:
 
     def __str__(self) -> str:
         return f"{self.carga}"
-
 No(20)
