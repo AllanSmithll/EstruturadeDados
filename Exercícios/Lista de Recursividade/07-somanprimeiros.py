@@ -7,10 +7,9 @@ def primeiros_termos(n) -> int:
         return 0
     else:   # Caso não seja igual a 0
         return n + primeiros_termos(n-1) # aqui é retornado o elemento n somado com a chamada recursiva da função.
-        
+
         '''
         Assim:
-
             n + (n-1) + (n-2) ... e assim por diante
         '''
 
