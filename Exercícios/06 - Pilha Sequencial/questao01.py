@@ -1,10 +1,26 @@
 from PilhaSequencial import Pilha
 
-if __name__ == '__main__':
-    numeros = []
-    p1 = Pilha()
-    print("A pilha é esta:", p1,)
-    print(f'''\nEditor de Pilha do Allan Alves Amancio v1.0\n============================================================\n
-    Pilha Selecionada: [{p1}]
-    topo: {p1[-1]}
-    ''')
+p1 = Pilha()
+
+print(f'''Editor de Pilha do Allan Amancio
+{"="*35}
+Pilha Selecionada: {p1}
+[] <- topo
+{"="*35}
+(e) - Empilhar
+(d) - Desempilhar
+(t) - Tamanho
+(o) - Obter elemento do topo
+(v) - Teste de pilha vazia
+(r) - Criar nova Pilha
+(z) - Esvaziar
+(c) - Concatenar duas pilhas
+(m) - Escolher outra pilha
+(n) - Conversão dec/bin
+(s) - Sair
+{"="*35}''')
+
+opcao = input("Digite sua opção")
+
+p1 = p1.empilha(20)
+print(p1)
