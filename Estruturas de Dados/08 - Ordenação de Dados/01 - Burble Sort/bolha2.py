@@ -10,7 +10,7 @@ def bolha(array):
 	    	
 
 print('Algoritmo da Bolha com flag de Troca')
-print('*' * 36)
+print('*' * 40)
 array = [20,5,15,4,2,9,11]
 print('Array Original:',array)
 bolha(array)
