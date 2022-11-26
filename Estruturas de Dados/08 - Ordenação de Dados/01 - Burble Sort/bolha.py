@@ -18,10 +18,12 @@ def bolha(array): # Funão bolha
         for j in range(0, i):
             if (array[j] > array[j+1]):
                 array[j], array[j+1] = array[j+1], array[j] # E assim é feita a troca
+                
+        # A cada varredura desse segundo for, o maior elemento do array sempre fica mais a direita
 
 
 lista = list()
-lista = [1, 20, 34, 4, 9, 8, 45, 2, 69]
+lista = [1, 20, 34, 4, 9, 8, 45, 2, 69] # Antes
 print("Array inicial:", lista)
 bolha(lista)
-print("Array ordenado:", lista)
+print("Array ordenado:", lista) # Depois
