@@ -1,3 +1,22 @@
+'''
+ Algoritmo também baseado no princípio
+“dividir para conquistar”
+ Resolução de um problema maior dividindo-o em
+dois ou mais problemas menores
+ Princípio de Funcionamento
+ Considere a sequencia de elementos de um
+array v = [v1
+,v2
+,v3
+,...,vn
+]
+
+ O array de entrada v é dividido pela metade,
+repetindo o processo em suas metades até que
+não possam ser mais divididos
+ A divisão termina quando o array atinge o tamanho de 1 unidade
+'''
+
 from typing import List
 
 def mergeSort(array:List[int]):

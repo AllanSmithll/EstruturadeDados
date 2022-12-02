@@ -1,5 +1,3 @@
-
-
 # Esta função atribui o primeiro elemento como pivô,  
 # coloca o pivô na sua posição correta no array
 # ordenado, de forma que todos os elementos a esquerda

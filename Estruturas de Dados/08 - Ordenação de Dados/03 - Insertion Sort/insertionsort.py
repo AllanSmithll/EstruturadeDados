@@ -1,3 +1,16 @@
+'''
+ A lógica consiste em dividir, virtualmente, um
+array em dois conjuntos: um ordenado (Aord) e
+um desordenado (Ades)
+ O Aord reside no início do array, e a cada
+iteração dos elementos de Ades, acrescenta-se
+em Aord o elemento na sua posição correta
+
+ Compara-se o elemento j=0 de Ades com os
+elementos i de Aord, do final para o início. Se
+Ades[j] < Aord[i..0], desloca à direita
+'''
+
 def insertionSort(array):
     # percorre o array
     # O laço começa do índice 1, pois o índice 0 é o início
