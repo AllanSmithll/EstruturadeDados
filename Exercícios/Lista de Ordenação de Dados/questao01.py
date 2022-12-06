@@ -11,13 +11,15 @@ def selectionSortRec(array):
 def __executaSelectionSort(array, size):
     troca = False
     for i in range(len(array)-1): # Vamos fazer iterações regressivas
-        min = i # O primeiro valor do array será considerado o menor inicialmente
-        for j in range(i+1, len(array)): # vamos fazer a troca real, a partir do i + 1
-            if(array[j] < array[min]): # Se array na posição j, que seria o elemento i + 1, for menor do que o menor atual
-                min = j  # Menor atual recebe j
-        array[min], array[i] = array[i], array[min] # troca
+        if array[i] > array[i+1]: # Se o elemento referenciado for maior que o elemento que está ao seu lado
+            temp = array[i] # Crio a variável temp e atribuo o valor array[i]
+            array[i] = array[i+1] #\ Array na posição i recebe o elemento ao seu lado
+            array[i+1] = temp # O elemento ao seu lado recebe o elemento temp (array[i])
+            troca = True # Houve troca de posição
+        if (troca): # Se troca = True
+            __executaSelectionSort(array, size-1) # Chame de novo a função
 
-arrays = [20, 10, 3, 4, 6, 30, 40, 50, 35, 5]
+arrays = [20, 10, 5, 30, 5, 6]
 print("Array original:", arrays)
 selectionSortRec(arrays)
-print("Array após o Slection Sort:", arrays)
+print("Array após o Selection Sort:", arrays)
