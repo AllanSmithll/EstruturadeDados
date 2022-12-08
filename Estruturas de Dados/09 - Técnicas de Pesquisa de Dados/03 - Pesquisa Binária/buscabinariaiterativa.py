@@ -20,7 +20,7 @@ print('Pesquisa: Busca Binária Iterativa')
 print('*' * 35)
 array = [20,5,15,4,2,9,11]
 array = sorted(array)
-chave = 9
+chave = int(input("Chave: "))
 print('Array de busca:',array)
 print('Chave:',chave)
 index = buscaBinaria(array,chave)

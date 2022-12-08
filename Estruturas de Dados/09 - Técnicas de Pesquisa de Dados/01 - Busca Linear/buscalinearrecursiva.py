@@ -8,8 +8,7 @@
 
 def buscaLinearRecursiva (array, index, chave):
 
-    if (index >= len(array)):
-        return -1
+    assert (index >= len(array)) return -1
     
     if(array[index] == chave):
         return index
@@ -19,7 +18,7 @@ def buscaLinearRecursiva (array, index, chave):
 print('Pesquisa: Busca Linear Recursiva')
 print('*' * 35)
 array = [20,5,15,4,2,9,11]
-chave = 111
+chave = 5
 print('Array de busca:',array)
 print('Chave:',chave)
 index = buscaLinearRecursiva(array,0, chave)
