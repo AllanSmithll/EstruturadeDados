@@ -8,7 +8,8 @@
 
 def buscaLinearRecursiva (array, index, chave):
 
-    assert (index >= len(array)) return -1
+    if (index >= len(array)):
+        return -1
     
     if(array[index] == chave):
         return index
