@@ -1,4 +1,4 @@
-# 12/11/2022
+# 05/11/2022
 # 1- Selecione o primeiro elemento (i=0) do array
 # 2- A partir de i+1, faça a varredura do array e identifique o valor que é menor ao que está armazenado no primeiro elemento
 # 3- Troque o valor armazenado no índice do primeiro elemento por aquele determinado como o menor valor
@@ -23,3 +23,7 @@ arrays = [20, 10, 5, 30, 5, 6]
 print("Array original:", arrays)
 selectionSortRec(arrays)
 print("Array após o Selection Sort:", arrays)
+
+'''
+Questão 01 da lista concluída com sucesso
+'''

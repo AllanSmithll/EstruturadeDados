@@ -5,6 +5,7 @@
 # chave: O valor a ser procurado no array
 #
 # Retorna o indice do elemento do array quando encontrado, ou -1 se ausente
+
 def buscaLinearRecursiva (array, index, chave):
 
     if (index >= len(array)):
