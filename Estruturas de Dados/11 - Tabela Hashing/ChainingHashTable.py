@@ -138,59 +138,59 @@ class ChainingHashTable:
 #  Programa Principal 
 # ------------------------------------------------ #
 size = int(input("Informe o tamanho da tabela hash desejada: "))
-cht = ChainingHashTable(size)
+cht1 = ChainingHashTable(size)
 
 
 # Armazenando elementos na tabela Hash
-cht.put(12,'alex')
-cht.displayTable()
+cht1.put(12,'alex')
+cht1.displayTable()
 input()
 
 # Aqui, tenta-se inserir a mesma chave. Como a chave já existe, atualiza o valor
-cht.put(12,'alex sandro')
-cht.displayTable()
+cht1.put(12,'alex sandro')
+cht1.displayTable()
 input()
 
-cht.put(31,'nathan')
-cht.displayTable()
+cht1.put(31,'nathan')
+cht1.displayTable()
 input()
 
-cht.put(90,'alice')
-cht.displayTable()
+cht1.put(90,'alice')
+cht1.displayTable()
 input()
 
-cht.put(28,'matheus')
-cht.displayTable()
+cht1.put(28,'matheus')
+cht1.displayTable()
 input()
 
-cht.put(88,'duda')
-cht.displayTable()
+cht1.put(88,'duda')
+cht1.displayTable()
 input()
 
-cht.put(40,'naty')
-cht.displayTable()
+cht1.put(40,'naty')
+cht1.displayTable()
 input()
 
-cht.put(77,'alessandra')
-cht.displayTable()
+cht1.put(77,'alessandra')
+cht1.displayTable()
 input()
 
-cht.put(26,'dan')
-cht.displayTable()
+cht1.put(26,'dan')
+cht1.displayTable()
 input()
 
-cht.put(17,'jessika')
-cht.displayTable()
+cht1.put(17,'jessika')
+cht1.displayTable()
 input()
 
 # A chamada ao método get() gera uma exceção se a chave não existir.
-#print('get():', cht.get(111))
+#print('get():', cht1.get(111))
 
-cht.remove(12)
-cht.displayTable()
+cht1.remove(12)
+cht1.displayTable()
 
 # A chamada ao método remove() gera uma exceção se a chave não existir.
-#cht.get(111)
+#cht1.get(111)
 
  
 
