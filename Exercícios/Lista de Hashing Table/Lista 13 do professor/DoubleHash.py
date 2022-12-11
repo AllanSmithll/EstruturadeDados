@@ -1,4 +1,3 @@
- 
 class DoubleHashing:
     # initialize hash Table
     PRIME = 7

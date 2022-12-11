@@ -1,8 +1,7 @@
 from DoubleHash import DoubleHashing
 
 # main function
-#size = int(input("Enter the Size of the hash table : "))
-size = 10
+size = int(input("Enter the Size of the hash table : "))
 table1 = DoubleHashing(size)
  
 # storing elements in table
@@ -23,12 +22,11 @@ table1.display()
 table1.put(26)
 table1.display()
 table1.put(17)
-input() 
+input()
 table1.display()
 
 # displaying the Table
 table1.display()
-print()
 ''' 
 # printing position of elements
 print("The position of element 31 is : " + str(table1.search(31)))
@@ -44,10 +42,8 @@ table1.remove(12)
  
 table1.display()
 '''
-
        
-'''       
- 
+'''      
     # method that searches for an element in the table
     # returns position of element if found
     # else returns False
