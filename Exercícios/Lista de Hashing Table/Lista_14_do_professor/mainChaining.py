@@ -53,3 +53,8 @@ c1 = Computador('192.168.0.1', 'Intel i7 8GB RAM 1TB HD')
 ht.put(c1, "Meu computador")
 ht.displayTable()
 print("Objeto computador 1: ", c1.__str__())
+
+# ------------------------------------------------ #
+#  Programa Principal: Parte 3
+# ------------------------------------------------ #
+
