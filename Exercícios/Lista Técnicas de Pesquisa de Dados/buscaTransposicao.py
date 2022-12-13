@@ -6,7 +6,7 @@ class ChaveInvalidaException(Exception):
         super().__init__(msg)
 
 def buscaTransposicao(chave:int, array:list[int]) -> int:
-    '''Método #1 que tem o objetivo de deslocar os elementos mais acessados para o início do array. Quando acessado por último, o valor do array ficará na primeira posição.'''
+    '''Método que tem o objetivo de deslocar os elementos mais acessados para o início do array. Quando acessado por último, o valor do array ficará na primeira posição.'''
 
     inicio=0
     fim=len(array)-1
