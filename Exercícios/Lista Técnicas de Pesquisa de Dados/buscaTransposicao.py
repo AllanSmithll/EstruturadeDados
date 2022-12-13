@@ -27,7 +27,7 @@ def buscaTransposicao(chave:int, array:list[int]) -> int:
 # PROGRAMA PRINCIPAL #
 #=================== #
 
-print('Pesquisa: Busca Por Transposição')
+print('\nBusca Por Transposição')
 print('*' * 35)
 array = [2, 3, 23, 10, 40, 27, 49, 38, 20]
 array = sorted(array)
