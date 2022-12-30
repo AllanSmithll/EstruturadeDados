@@ -11,12 +11,12 @@ class Banco:
         self.__saldoTotal = 0
         self.__moedaCorrente = "R$"
     
-    @property
-    def acessarConta(self, numero):
+    def acessarConta(self, numero:int):
         try:
             assert numero in self.__contas
-            return self.__moedaCorrente + self.__saldoTotal
-        except KeyError:
+            conta = self.__contas[numero]
+            print(conta)
+        except AssertionError:
             raise OperacaoInvalidaException('Acesso a uma conta inválida.')
         
     def sacar(self, numero:int, quantia:float):
