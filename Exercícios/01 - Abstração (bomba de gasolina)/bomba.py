@@ -4,6 +4,4 @@ class Bomba:
         self.valor_lit = valor_lit
         self.quant_litros = quant_litros
 
-    def Gasosa(self):
-        pag
-    def Diesel():
+    # Exercício ignorado
