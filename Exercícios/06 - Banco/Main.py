@@ -1,6 +1,7 @@
 from Conta import Conta
 from Banco import *
 
+# BAB - Banco Allan Bank
 bab = Banco()
 bab.addConta(123, 'Alex')
 bab.addConta(456, 'Clodoaldo')
