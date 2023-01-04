@@ -2,7 +2,6 @@ def buscaBinaria(array, chave):
     return buscaBinariaRecursiva(array,chave,0,len(array)-1)
     
 def buscaBinariaRecursiva(array, chave, inicio,fim):
-
     if( inicio > fim):
         return -1
     else:
