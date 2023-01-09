@@ -33,7 +33,7 @@ class Pilha:
         return self.__tamanho
 
     def __len__(self)->int:
-        return return self.__tamanho
+        return self.__tamanho
 
     def elemento(self, posicao:int)->any:
         '''

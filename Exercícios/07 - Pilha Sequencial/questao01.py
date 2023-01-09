@@ -1,15 +1,18 @@
 # 06/01/2022
-from PilhaSequencial import Pilha
+from PilhaSequencial import *
 from time import sleep
 
+lista_pilhas = Pilha()
 p1 = Pilha()
+lista_pilhas.empilha(p1)
+pilha_selecionada = p1.__str__()
 
 while True:
     print()
     sleep(1.5)
     print(f'''Editor de Pilha do Allan Amâncio (com números)
     {"="*35}
-    Pilha Selecionada: {p1}
+    Pilha Selecionada: {pilha_selecionada}
     [] <- topo
     {"="*35}
     (e) - Empilhar
@@ -18,7 +21,7 @@ while True:
     (o) - Obter elemento do topo
     (v) - Teste de pilha vazia
     (r) - Criar nova Pilha
-    (z) - Esvaziar
+    (z) - Esvaziar a pilha
     (c) - Concatenar duas pilhas
     (m) - Escolher outra pilha
     (n) - Conversão dec/bin
@@ -33,8 +36,11 @@ while True:
         print(f"Valor {valor} adicionado à pilha com sucesso.")
         continue
     if opcao == 'd':
-        p1.desempilha()
-        print("Último elemento desempilhado.")
+        try:
+            assert pilha_selecionada.estaVazia()
+            print("Pilha vazia! Não pode desempilhar.")
+        except:
+            print("Último elemento desempilhado.")
     if opcao == 't':
         print(f"A pilha possui {p1.tamanho()} elemento(s).")
     if opcao == 'o':
@@ -45,8 +51,14 @@ while True:
         if p1.estaVazia(): print("Pilha vazia.")
         else: print(f"Pilha não está vazia. Tem {p1.tamanho()} elemento(s).")
     if opcao == "r":
-        pass
-
+        p2 = Pilha()
+        print(f"Pilha criada com sucesso.")
+    if opcao == 'z':
+        Pilha.esvazia()
+        print(f"Pilha {Pilha} esvaziada com sucesso.")
+    # if opcao == 'c':
+    #     print(f"Concatenar com qual pilha? ")
+    #     p1.concatena(p2)
 
 
     '''
