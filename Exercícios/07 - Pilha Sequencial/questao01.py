@@ -1,20 +1,21 @@
-# 06/01/2022
+# 06123/01/2022
+'''
+Exercício para utilizar as operações de uma Pilha
+
+- Exercício moficado por Allan Amâncio. Github: https://github.com/AllanSmithll
+'''
+
 from PilhaSequencial import *
 from time import sleep
 
-lista_pilhas = Pilha()
 p1 = Pilha()
-lista_pilhas.empilha(p1)
-pilha_selecionada = p1.__str__()
 
 while True:
     print()
     sleep(1.5)
     print(f'''Editor de Pilha do Allan Amâncio (com números)
     {"="*35}
-    Pilha Selecionada: {pilha_selecionada}
-    [] <- topo
-    {"="*35}
+    Pilha atual: {p1}
     (e) - Empilhar
     (d) - Desempilhar
     (t) - Tamanho
@@ -22,22 +23,28 @@ while True:
     (v) - Teste de pilha vazia
     (r) - Criar nova Pilha
     (z) - Esvaziar a pilha
-    (c) - Concatenar duas pilhas
-    (m) - Escolher outra pilha
     (n) - Conversão dec/bin
     (s) - Sair
     {"="*35}''')
 
-    # Selecionar e executar a opção
-    opcao = input("Digite sua opção: ").lower()
+    try:    # Selecionar e executar a opção
+        opcao = input("Digite sua opção: ").lower()
+    except opcao == ValueError:
+        raise "Opção inválida!"
+        continue
     if opcao == 'e':
-        valor = float(input("Digite um valor para empilhar: "))
-        p1.empilha(valor)
-        print(f"Valor {valor} adicionado à pilha com sucesso.")
+        try:
+            valor = float(input("Digite um valor para empilhar: "))
+        except ValueError:
+            raise "Valor inválido! Digite novamente."
+            # valor = float(input("Digite um valor para empilhar: "))
+        finally:
+            p1.empilha(valor)
+            print(f"Valor {valor} adicionado à pilha com sucesso.")
         continue
     if opcao == 'd':
         try:
-            assert pilha_selecionada.estaVazia()
+            assert p1.estaVazia()
             print("Pilha vazia! Não pode desempilhar.")
         except:
             print("Último elemento desempilhado.")
@@ -56,9 +63,9 @@ while True:
     if opcao == 'z':
         Pilha.esvazia()
         print(f"Pilha {Pilha} esvaziada com sucesso.")
-    # if opcao == 'c':
-    #     print(f"Concatenar com qual pilha? ")
-    #     p1.concatena(p2)
+    if opcao == 'c':
+        print(f"Concatenar com qual pilha? ")
+        p1.concatena(p2)
 
 
     '''
