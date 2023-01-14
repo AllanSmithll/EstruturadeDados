@@ -27,27 +27,28 @@ while True:
     (s) - Sair
     {"="*35}''')
 
-    try:    # Selecionar e executar a opção
-        opcao = input("Digite sua opção: ").lower()
-    except opcao == ValueError:
-        raise "Opção inválida!"
-        continue
+   # Selecionar e executar a opção
+    opcao = str(input("Digite sua opção: ")).lower()
     if opcao == 'e':
         try:
             valor = float(input("Digite um valor para empilhar: "))
         except ValueError:
-            raise "Valor inválido! Digite novamente."
-            # valor = float(input("Digite um valor para empilhar: "))
+            print("Valor inválido! Digite novamente, mas que seja um número real.")
+            valor = float(input("Digite outro valor para empilhar: "))
         finally:
             p1.empilha(valor)
             print(f"Valor {valor} adicionado à pilha com sucesso.")
-        continue
+            continue
+
     if opcao == 'd':
         try:
             assert p1.estaVazia()
+        except AssertionError:
             print("Pilha vazia! Não pode desempilhar.")
-        except:
+        else:
+            p1.desempilha(valor)
             print("Último elemento desempilhado.")
+            continue
     if opcao == 't':
         print(f"A pilha possui {p1.tamanho()} elemento(s).")
     if opcao == 'o':
@@ -66,6 +67,8 @@ while True:
     if opcao == 'c':
         print(f"Concatenar com qual pilha? ")
         p1.concatena(p2)
+    else:
+        print("Opção inválida!")
 
 
     '''
