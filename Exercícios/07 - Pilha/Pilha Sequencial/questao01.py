@@ -1,4 +1,4 @@
-# 06123/01/2022
+# 16/01/2022
 '''
 Exercício para utilizar as operações de uma Pilha
 
