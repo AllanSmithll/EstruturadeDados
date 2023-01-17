@@ -56,7 +56,7 @@ class Pilha:
         except IndexError:
             raise PilhaException(f'Posicao inválida para a pilha atual com {len(self.__dados)} elementos')
 
-    def empilha(self, conteudo:any):
+    def empilha(self, conteudo:any or bin):
         '''Método que empilha cada elemento indicado para empilhar
         
         Argumentos:
@@ -66,12 +66,15 @@ class Pilha:
         self.__dados.append(conteudo)
 
     def desempilha(self)->any:
-        '''Método que desempilha cada elemento que estiver pertencente a tal pilha'''
+        '''Método desempilha o último elemento que estiver pertencente a tal pilha'''
         if self.estaVazia():
             raise PilhaException(f'Pilha vazia.')
         return self.__dados.pop()
 
     def __str__(self):
+        if bin in self.__dados: 
+            s = bin
+            return s
         s = ''
         for e in self.__dados:
             s+=f'{e} '
