@@ -1,3 +1,4 @@
+# Daqui, fiz apenas o método imprime()
 class PilhaException(Exception):
     def __init__(self, msg):
         super().__init__(msg)
@@ -71,15 +72,18 @@ class Pilha:
             raise PilhaException(f'Pilha vazia.')
         return self.__dados.pop()
 
-    def __str__(self):
-        if bin in self.__dados: 
-            s = bin
-            return s
-        s = ''
-        for e in self.__dados:
-            s+=f'{e} '
-        return s
+    # def __str__(self):
+    #     s = ''
+    #     for e in self.__dados:
+    #         s+=f'{e} '
+    #     return s
 
     def esvazia(self):
         '''Método que esvazia completamente uma pilha referenciada'''
         self.__dados.clear()
+    
+    def imprime(self):
+        '''Método que imprime o conteúdo da pilha'''
+        for e in self.__dados:
+            print(e, end=' ')
+        print()
