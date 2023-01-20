@@ -12,7 +12,7 @@ class No:
         return str(self.carga)
 
 
-class Pilha:
+class PilhaEncadeada:
     def __init__(self):
         self.__start = None
         self.__tamanho = 0
@@ -145,7 +145,7 @@ class Pilha:
         if self.__tamanho <= 1:
             return False
 
-        pilhaInvertida = Pilha()
+        pilhaInvertida = PilhaEncadeada()
         cursor = self.__start
         carga = None
         while (cursor is not None):
@@ -189,8 +189,8 @@ class Pilha:
 
         return cursor
 
-    def concatena(self, outraPilha: 'Pilha') -> None:
-        pilhaAux = Pilha()
+    def concatena(self, outraPilha: 'PilhaEncadeada') -> None:
+        pilhaAux = PilhaEncadeada()
         # Inverter a pilha "outraPilha"
         while (not outraPilha.estaVazia()):
             pilhaAux.empilha(outraPilha.desempilha())
