@@ -18,6 +18,7 @@ class PilhaEncadeada:
         self.__tamanho = 0
 
     def estaVazia(self) -> bool:
+        '''Teste de pilha vazia'''
         return self.__start is None
 
     def tamanho(self) -> int:
@@ -97,12 +98,14 @@ class PilhaEncadeada:
                 f'Posicao inválida para a pilha atual com {self.__tamanho} elementos')
 
     def empilha(self, conteudo: any):
+        '''Método que empilha um elemento na Stack'''
         novo = No(conteudo)
         novo.prox = self.__start
         self.__start = novo
         self.__tamanho += 1
 
     def desempilha(self) -> any:
+        '''Método que desempilha o elemento que está no começo da Pilha'''
         if self.estaVazia():
             raise PilhaException('Pilha vazia')
         carga = self.__start.carga
@@ -174,7 +177,6 @@ class PilhaEncadeada:
             raise PilhaException(
                 f'Não é possível desempilhar {n} elementos de uma pilha com {self.__tamanho} elementos') 
             """
-
         for i in range(n):
             self.desempilha()
         return True
