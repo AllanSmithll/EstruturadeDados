@@ -1,19 +1,20 @@
 # 18/01/2023
 '''
-Exerício feito pelo colega Yago César, que trabalha na Assert-IFPB enquanto registro este código
+Exerício feito pelo colega Yago César - IFPB, da lista de exercícios do professor Alex Sandro
+
+Modificações: Allan Alves Amâncio - IFPB
 '''
-from Pilha_Encadeada.PilhaEncadeada import Pilha, PilhaException
+from PilhaEncadeada import *
 
 userChoice = str()
 userInput = str()
 element = str()
-allStacks = [Pilha()]
+allStacks = [PilhaEncadeada()]
 
 while userChoice != 'sair':
 
     stackIndex = 0
     selectedStack = allStacks[stackIndex]
-    """
     print(
         f'''
         \rEditor de Pilha v1.2
@@ -35,7 +36,7 @@ while userChoice != 'sair':
         \r(s) Sair
         \r=====================================
         '''
-    )"""
+    )
     userChoice = input('Digite a sua opção > ').lower()
 
     if userChoice == 'e':
@@ -64,7 +65,7 @@ while userChoice != 'sair':
             print('\nHá pelo menos um elemento nesta pilha.')
 
     elif userChoice == 'r':
-        allStacks.append(Pilha())
+        allStacks.append(PilhaEncadeada())
         print('\nNova pilha adicionada com sucesso!')
 
     elif userChoice == 'i':
