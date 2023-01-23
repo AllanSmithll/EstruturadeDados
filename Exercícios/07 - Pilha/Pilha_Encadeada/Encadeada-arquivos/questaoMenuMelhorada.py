@@ -2,7 +2,7 @@
 '''
 Exerício feito pelo colega Yago César, que trabalha na Assert-IFPB enquanto registro este código
 '''
-from PilhaEncadeada import Pilha, PilhaException
+from Pilha_Encadeada.PilhaEncadeada import Pilha, PilhaException
 
 userChoice = str()
 userInput = str()
