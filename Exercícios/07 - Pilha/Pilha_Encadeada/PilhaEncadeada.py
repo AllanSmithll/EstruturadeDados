@@ -23,7 +23,10 @@ class PilhaEncadeada:
 
     def tamanho(self) -> int:
         '''
-        # Percorre todos os nós de uma estrutura linear
+        Percorre todos os nós de uma estrutura linear
+        '''
+        '''
+        PILHA SEQUENCIAL
         cont = 0
         cursor = self.__head
         while(cursor != None):
@@ -170,7 +173,15 @@ class PilhaEncadeada:
             raise PilhaException(f'Uma pilha vazia não possui topo.')
         return self.__start.carga
 
-    def desempilha_n(self, n: int) -> bool:
+    def desempilha_n_elementos(self, n: int) -> bool:
+        '''Método que desempilha uma quantidade "n" de elementos.
+        
+        Argumentos:
+        
+        n: quantidade de elementos a serem desempilhados
+        
+        Retorna False se a quantidade for maior que o tamanho da Pilha
+        "'''
         if n > self.__tamanho:
             return False
             """
