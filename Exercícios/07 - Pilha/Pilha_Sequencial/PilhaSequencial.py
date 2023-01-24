@@ -87,3 +87,25 @@ class Pilha:
         for e in self.__dados:
             print(e, end=' ')
         print()
+    
+    def decToBin(self, numero:int) -> bin:
+        '''
+        Converte um número inteiro para binário
+
+        Argumentos:
+            int numero: Um número inteiro
+
+        Exemplo de uso:
+            decToBin(10); // Imprime 1010
+        '''
+        try:
+            assert ( not self.estaVazia())
+            for i in range(len(self.__dados)):
+                if self.__dados[i] != numero: pass 
+                elif self.__dados[i] == numero:
+                    binario = bin(numero)[2:]
+                    return binario
+        except AssertionError:
+            raise PilhaException("A Pilha está vazia.")
+        else:
+            raise PilhaException(f"O número {numero} não está na Pilha.")

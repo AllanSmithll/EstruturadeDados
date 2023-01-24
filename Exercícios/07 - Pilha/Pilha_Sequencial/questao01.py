@@ -7,7 +7,7 @@ Exercício para utilizar as operações de uma Pilha
 
 from PilhaSequencial import *
 from time import sleep
-from converterDecBin import converterDecimalBinary
+from converterDecBin import decToBin
 
 p1 = Pilha()
 
