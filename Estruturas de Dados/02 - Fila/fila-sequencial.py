@@ -7,13 +7,13 @@ class Sequencial:
     def __init__(self):
         self.__dados = []
     
-    def vazio(self):
+    def vazio(self) -> bool:
         return len(self.__dados) == 0
     
-    def tamanho(self):
+    def tamanho(self) -> int:
         return len(self.__dados)
 
-    def inicio(self):
+    def inicio(self) -> any:
         if self.vazio():
             raise SequencialException("A fila está vazia.")
         return self.__dados[0]

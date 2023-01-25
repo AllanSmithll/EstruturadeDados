@@ -88,6 +88,18 @@ class Pilha:
             print(e, end=' ')
         print()
     
+    def inverte(self) -> bool:
+        if (self.tamanho() <= 1):
+            return False
+        pilhaInvertida = Pilha()
+        dado = None
+        while (not self.estaVazia()):
+            dado = self.desempilha()
+            pilhaInvertida.empilha(dado)
+            dadoInvertido = pilhaInvertida.desempilha()
+            self.empilha(dadoInvertido)
+        return True
+    
     def decToBin(self, numero:int) -> bin:
         '''
         Converte um número inteiro para binário
