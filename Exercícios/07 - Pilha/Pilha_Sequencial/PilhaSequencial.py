@@ -91,13 +91,12 @@ class Pilha:
     def inverte(self) -> bool:
         if (self.tamanho() <= 1):
             return False
-        pilhaInvertida = Pilha()
-        dado = None
         while (not self.estaVazia()):
+            dado = None
+            listaInvertida = []
             dado = self.desempilha()
-            pilhaInvertida.empilha(dado)
-            dadoInvertido = pilhaInvertida.desempilha()
-            self.empilha(dadoInvertido)
+            listaInvertida.append(dado)
+        self.empilha(listaInvertida)
         return True
     
     def decToBin(self, numero:int) -> bin:
