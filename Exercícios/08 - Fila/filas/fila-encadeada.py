@@ -109,3 +109,6 @@ class Fila:
 
         while (not self.estaVazia()):
             self.desenfileira()
+
+    def combina(cls, fres, f1, f2):
+        pass
