@@ -89,6 +89,15 @@ class Pilha:
         print()
     
     def inverte(self) -> bool:
+        '''Método que força a inversão de todos os elementos da Pilha
+        
+        Argumentos:
+        
+        Sem argumentos
+        
+        Retorno:
+        
+        Bool, quando a Pilha tem, no mínimo, 2 elementos'''
         if (self.tamanho() <= 1):
             return False
         elementosPilha = []
