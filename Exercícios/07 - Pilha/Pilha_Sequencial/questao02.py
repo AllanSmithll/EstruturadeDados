@@ -1,5 +1,5 @@
-# 25/01/2023
 # Testando o método inverte feito por mim
+# Método inverte concluído agora, 30/01/2023
 from PilhaSequencial import *
 
 if __name__ == '__main__':
