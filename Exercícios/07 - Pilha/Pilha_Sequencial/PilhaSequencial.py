@@ -97,7 +97,7 @@ class Pilha:
         
         Retorno:
         
-        Bool, quando a Pilha tem, no mínimo, 2 elementos'''
+        True, quando a Pilha tem, no mínimo, 2 elementos'''
         if (self.tamanho() <= 1):
             return False
         elementosPilha = []
