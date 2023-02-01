@@ -57,7 +57,7 @@ class FilaCircular:
         self.__ocupados += 1
 
     def desenfileira(self)->any:
-        if self.estaVazia():
+        if self.estaVazia():        
             raise FilaException(f'Fila vazia. Não é possivel a remocao')
 
         carga = self.__dados[self.__frente]
@@ -87,4 +87,4 @@ class FilaCircular:
         '''
     
     def combina(cls, fres, f1, f2):
-        
+        pass

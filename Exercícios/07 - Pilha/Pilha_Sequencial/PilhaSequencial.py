@@ -1,5 +1,5 @@
 # 31/01/2023
-# Daqui, fiz apenas os métodos inverte() e topo()
+# Daqui, fiz apenas os métodos decToBinary(), inverte() e topo()
 class PilhaException(Exception):
     def __init__(self, msg):
         super().__init__(msg)
@@ -135,5 +135,7 @@ class Pilha:
                     return binario
         except AssertionError:
             raise PilhaException("A Pilha está vazia.")
+        except TypeError as te:
+            raise(f"Erro > {te}")
         else:
             raise PilhaException(f"O número {numero} não está na Pilha.")

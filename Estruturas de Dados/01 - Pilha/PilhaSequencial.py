@@ -1,5 +1,5 @@
 # 31/01/2023
-# Daqui, fiz apenas o métodos inverte() e topo()
+# Daqui, fiz apenas o métodos decToBinary(), inverte() e topo()
 class PilhaException(Exception):
     def __init__(self, msg):
         super().__init__(msg)
