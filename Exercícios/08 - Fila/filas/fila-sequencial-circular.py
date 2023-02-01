@@ -2,7 +2,7 @@ class FilaException(Exception):
     def __init__(self, msg):
         super().__init__(msg)
 
-class Fila:
+class FilaCircular:
     def __init__(self, tamanho:int = 10):
         self.__frente = 0
         self.__final  = -1

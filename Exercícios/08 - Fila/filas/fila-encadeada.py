@@ -111,4 +111,4 @@ class Fila:
             self.desenfileira()
 
     def combina(cls, fres, f1, f2):
-        pass
+        
