@@ -22,7 +22,7 @@ class No:
         return f'{self.carga}'
 
 
-class Fila:
+class FilaEncadeada:
     def __init__(self) -> None:
         self.__head = NoCabeca()
 
@@ -111,4 +111,4 @@ class Fila:
             self.desenfileira()
 
     def combina(cls, fres, f1, f2):
-        
+        pass
