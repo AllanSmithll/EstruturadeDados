@@ -27,11 +27,12 @@ while choice != 'sair':
         \r(d) Desempilhar
         \r(t) Tamanho
         \r(o) Obter elemento do topo
+        \r(h) Mostrar como está a Pilha atual
         \r(v) Teste de pilha vazia
         \r(r) Criar nova Pilha
         \r(n) Inverter os elementos da pilha
         \r(z) Esvaziar a pilha
-        \r(c) Concatenar duas pilhas
+        \r(c) Concatenar duas pilhas (cancelado)
         \r(m) Escolher outra pilha
         \r(b) Conversão dec/bin
         \r(s) Sair
@@ -58,6 +59,12 @@ while choice != 'sair':
             print('\nElemento do topo:', selectedStack.topo())
         except PilhaException as pe:
             print('\nErro:', pe)
+    elif choice == 'h':
+        if len(selectedStack) < 0:
+            print("Pilha vazia!")
+        else:
+            print(f"A pilha selecionada está assim:")
+            selectedStack.imprime()
 
     elif choice == 'v':
         if selectedStack.estaVazia():
@@ -82,3 +89,14 @@ while choice != 'sair':
         if (selectedStack.estaVazia()):
             print("Não é possível rotacionar uma pilha vazia.")
         selectedStack.inverte()
+
+    elif choice == 'm':
+        pass
+
+    elif choice == 'b':
+        try:
+            numero = int(input("Qual número você deseja converter? "))
+            selectedStack.decToBin(numero)
+        except ValueError as ve:
+            print(f"Erro > {ve}")
+

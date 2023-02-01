@@ -1,4 +1,5 @@
-# Daqui, fiz apenas o método imprime()
+# 31/01/2023
+# Daqui, fiz apenas os métodos inverte() e topo()
 class PilhaException(Exception):
     def __init__(self, msg):
         super().__init__(msg)
@@ -87,6 +88,12 @@ class Pilha:
         for e in self.__dados:
             print(e, end=' ')
         print()
+    
+    def topo(self) -> any:
+        '''Método para retornar o topo de uma Pilha'''
+        if self.estaVazia():
+            raise PilhaException("A pilha está vazia. Não tem topo.")
+        return self.__dados[0]
     
     def inverte(self) -> bool:
         '''Método que força a inversão de todos os elementos da Pilha
