@@ -1,5 +1,5 @@
 # 31/01/2023
-# Daqui, fiz apenas o métodos decToBinary(), inverte() e topo()
+# Daqui, fiz apenas os métodos concatena(), decToBinary(), inverte() e topo()
 class PilhaException(Exception):
     def __init__(self, msg):
         super().__init__(msg)
@@ -137,3 +137,12 @@ class Pilha:
             raise PilhaException("A Pilha está vazia.")
         else:
             raise PilhaException(f"O número {numero} não está na Pilha.")
+    
+    def concatena( cls, outraPilha: 'Pilha' ) -> None:
+        '''Método que concatena duas Pilhas.
+        
+        Argumentos:
+        
+        outraPilha: Pilha que será concatenada com a Pilha que está em uso no momento.'''
+        while len(outraPilha) != 0:
+            cls.empilha(outraPilha.desempilha())

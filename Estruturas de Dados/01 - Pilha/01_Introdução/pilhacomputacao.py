@@ -1,6 +1,8 @@
 # 22/10/2022
 
 '''
+EXEMPLO IMPORTANTE DE PILHA NA COMPUTAÇÃO
+
 Por mais incrível que pareça, ainda vou codar sobre "Recursividade", mas abaixo já é possível um exemplo deste recurso, até porque há um "chamamento entre os métodos
 '''
 
