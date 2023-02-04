@@ -139,3 +139,8 @@ class Pilha:
             raise(f"Erro > {te}")
         else:
             raise PilhaException(f"O número {numero} não está na Pilha.")
+
+    def concatena( cls, pilha2: 'Pilha' ):
+        while len(pilha2) != 0:
+            cls.empilha(pilha2.desempilha())
+        
