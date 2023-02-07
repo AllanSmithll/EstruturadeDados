@@ -15,3 +15,5 @@ p2.enfileira(3.1)
 p2.enfileira(9.8)
 
 p3.combina(p3, p2, p1)
+
+p3.__str__()
