@@ -14,6 +14,9 @@ pilha2.empilha(9.8)
 pilha2.empilha(3.1)
 pilha2.empilha(7.2)
 
+pilha1.imprime()
+pilha2.imprime()
+
 pilha3.concatenaPilhas(pilha1, pilha2)
 
 pilha3.imprime()

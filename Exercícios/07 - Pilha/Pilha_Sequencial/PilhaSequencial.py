@@ -1,5 +1,5 @@
-# 31/01/2023
-# Daqui, fiz apenas os métodos concatena(), decToBinary(), inverte() e topo()
+# 09/02/2023
+# Daqui, fiz apenas os métodos concatenaPilhas(), concatena(), decToBinary(), inverte() e topo()
 class PilhaException(Exception):
     def __init__(self, msg):
         super().__init__(msg)
@@ -140,20 +140,42 @@ class Pilha:
         else:
             raise PilhaException(f"O número {numero} não está na Pilha.")
 
-    def concatena( cls, outraPilha: 'Pilha' ) -> None:
+    def concatena( cls, outraPilha: 'Pilha' ) -> bool:
         '''Método que concatena duas Pilhas.
         
         Argumentos:
         
         outraPilha: Pilha que será concatenada com a Pilha que está em uso no momento.'''
         pilhaAuxiliar = Pilha()
-
+        if len(outraPilha) == 0:
+            return False
         while len(outraPilha) != 0:
             pilhaAuxiliar.empilha(outraPilha.desempilha())
         while (len(pilhaAuxiliar) != 0):
             cls.empilha(pilhaAuxiliar.desempilha())
+        return True
         
-    def concatenaPilhas( cls, pilha1: 'Pilha', pilha2: 'Pilha' ) -> 'Pilha':
+    def concatenaPilhas( cls, pilha1: 'Pilha', pilha2: 'Pilha' ) -> bool:
+        '''Método que concatena duas Pilhas.
+        
+        Argumentos:
+        
+        outraPilha: Pilha que será concatenada com a Pilha que está em uso no momento.'''
+        pilhaAuxiliar = Pilha()
+        if (pilha1.tamanho() == 0 and pilha2.tamanho() == 0):
+            return False
+        else:
+            if (pilha1.tamanho() > 0):
+                while (pilha1.tamanho() != 0):
+                    pilhaAuxiliar.empilha(pilha1.desempilha())
+                while pilhaAuxiliar.tamanho() > 0:
+                    cls.empilha(pilhaAuxiliar.desempilha())
+            if (pilha2.tamanho() > 0):
+                while (pilha2.tamanho() != 0):
+                    pilhaAuxiliar.empilha(pilha2.desempilha())
+                while (pilhaAuxiliar.tamanho() > 0):
+                    cls.empilha(pilhaAuxiliar.desempilha())
+            return True
         while len(pilha1) != 0:
             cls.empilha(pilha1.desempilha())
         while len(pilha2) != 0:
