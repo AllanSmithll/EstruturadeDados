@@ -64,7 +64,17 @@ class FilaCircular:
         self.__frente = (self.__frente + 1) % self.__tamanho
         self.__ocupados -= 1
 
+    def imprime(self):
+        s = '[ '
 
+        inicio = self.__frente
+        for i in range(self.__ocupados):
+            s += f'{self.__dados[inicio]} '
+            inicio = (inicio + 1) % self.__ocupados
+
+        s += ']'
+        return s
+    
     def __str__(self):
         s = '[ '
 
@@ -94,4 +104,11 @@ class FilaCircular:
             if (f1.tamanho() == 0):
                 while (f1.tamanho != 0):
                     filaAuxiliar.enfileira(f1.desenfileira())
+                while (filaAuxiliar.tamanho != 0):
+                    fres.enfileira(filaAuxiliar.desenfileira())
+            if (f2.tamanho() == 0):
+                while (f2.tamanho != 0):
+                    filaAuxiliar.enfileira(f2.desenfileira())
+                while (filaAuxiliar.tamanho != 0):
+                    fres.enfileira(filaAuxiliar.desenfileira())
             return True
