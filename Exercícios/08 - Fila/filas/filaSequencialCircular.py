@@ -87,13 +87,10 @@ class FilaCircular:
         '''
     
     def combina(cls, fres: "FilaCircular", f1: "FilaCircular", f2: "FilaCircular") -> bool:
-        filaUm = f1
-        filaDois = f2
-        if (filaUm.tamanho() == 0 and filaDois.tamanho() == 0):
+        if (f1.tamanho() == 0 and f2.tamanho() == 0):
             return False
         else:
-            for i in range(filaUm.tamanho()):
-                fres.enfileira(filaUm.__dados[i])
-                for j in range(filaDois.tamanho()):
-                    fres.enfileira(filaDois.__dados[j])
+            tamanhoInicialF1 = f1.tamanho()
+            for i in range(tamanhoInicialF1):
+                fres.empilha(g)
             return True

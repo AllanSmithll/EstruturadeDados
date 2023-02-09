@@ -146,12 +146,16 @@ class Pilha:
         Argumentos:
         
         outraPilha: Pilha que será concatenada com a Pilha que está em uso no momento.'''
+        pilhaAuxiliar = Pilha()
+
         while len(outraPilha) != 0:
-            cls.empilha(outraPilha.desempilha())
+            pilhaAuxiliar.empilha(outraPilha.desempilha())
+        while (len(pilhaAuxiliar) != 0):
+            cls.empilha(pilhaAuxiliar.desempilha())
         
     def concatenaPilhas( cls, pilha1: 'Pilha', pilha2: 'Pilha' ) -> 'Pilha':
-        while len(pilha1) > 0:
+        while len(pilha1) != 0:
             cls.empilha(pilha1.desempilha())
-        while len(pilha2) > 0:
+        while len(pilha2) != 0:
             cls.empilha(pilha2.desempilha())
         return

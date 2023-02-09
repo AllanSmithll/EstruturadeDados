@@ -144,5 +144,9 @@ class Pilha:
         Argumentos:
         
         outraPilha: Pilha que será concatenada com a Pilha que está em uso no momento.'''
+        pilhaAuxiliar = Pilha()
+
         while len(outraPilha) != 0:
-            cls.empilha(outraPilha.desempilha())
+            pilhaAuxiliar.empilha(outraPilha.desempilha())
+        while (len(pilhaAuxiliar) != 0):
+            cls.empilha(pilhaAuxiliar.desempilha())
