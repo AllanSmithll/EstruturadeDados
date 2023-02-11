@@ -160,7 +160,9 @@ class Pilha:
         
         Argumentos:
         
-        outraPilha: Pilha que será concatenada com a Pilha que está em uso no momento.'''
+        pilha1: Pilha que será concatenada com a Pilha2
+        pilha2: Pilha que será concatenada com a Pilha1 
+        '''
         pilhaAuxiliar = Pilha()
         if (pilha1.tamanho() == 0 and pilha2.tamanho() == 0):
             return False
@@ -176,8 +178,3 @@ class Pilha:
                 while (pilhaAuxiliar.tamanho() > 0):
                     cls.empilha(pilhaAuxiliar.desempilha())
             return True
-        while len(pilha1) != 0:
-            cls.empilha(pilha1.desempilha())
-        while len(pilha2) != 0:
-            cls.empilha(pilha2.desempilha())
-        return
