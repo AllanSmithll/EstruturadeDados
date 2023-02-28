@@ -33,6 +33,7 @@ while choice != 'sair':
         \r(r) Criar nova Pilha
         \r(n) Inverter os elementos da pilha
         \r(z) Esvaziar a pilha
+        \r(i) Inverter string (cancelado)
         \r(c) Concatenar duas pilhas (funciona com Pilha Encadeada)
         \r(m) Escolher outra pilha (cancelado)
         \r(b) Conversão dec/bin do topo (cancelado por funcionar apenas com números inteiros)
