@@ -1,12 +1,12 @@
 # 30/01/2023
-# Teste do método criado por mim
+# Testes do método criado por mim -> ABANDONADO
 from filaSequencialCircular import *
 
-f1 = FilaCircular()
-f2 = FilaCircular()
-f3 = FilaCircular()
+f1 = FilaCircular(3)
+f2 = FilaCircular(3)
+f3 = FilaCircular(6)
 
-lista1 = [2.1, 2.5, 1.0]
+lista1 = [2.1, 4.5, 1.0]
 lista2 = [7.2, 3.1, 9.8]
 
 for i in range(len(lista1)):
@@ -14,9 +14,11 @@ for i in range(len(lista1)):
 for i in range(len(lista2)):
     f2.enfileira(lista2[i])
 
-f1.imprime()
-f2.imprime()
+print(f1.imprime())
+print(f2.imprime())
+print(f3.imprime())
 
-f3.combina(f3, f1, f2)
+# Letra A
+FilaCircular.combina(f3, f1, f2)
 
-f3.imprime()
+print(f3.imprime())

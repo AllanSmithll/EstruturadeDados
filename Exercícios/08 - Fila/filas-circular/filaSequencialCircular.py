@@ -3,7 +3,7 @@ class FilaException(Exception):
         super().__init__(msg)
 
 class FilaCircular:
-    def __init__(self, tamanho:int = 10):
+    def __init__(self, tamanho):
         self.__frente = 0
         self.__final  = -1
         self.__tamanho = tamanho
@@ -96,14 +96,14 @@ class FilaCircular:
             self.desenfileira()
         '''
     
-    def combina(cls, fres: "FilaCircular", f1: "FilaCircular", f2: "FilaCircular") -> bool:
-        if (f1.tamanho() == 0 and f2.tamanho() == 0):
-            return False
+    def combina(cls, fres: "FilaCircular", f1: "FilaCircular", f2: "FilaCircular") -> None:
+        if (f1.estaVazia() and f2.estaVazia()):
+            raise FilaException("Pelo menos uma das filas está vazia!")
         else:
-                while (f1.tamanho() > 0):
-                    carga = f1.desenfileira()
-                    fres.enfileira(carga)
-                while (f2.tamanho() > 0):
-                    carga = f2.desenfileira()
-                    fres.enfileira(carga)
-                return True
+            while True:
+                if not f1.estaVazia():
+                    fres.enfileira(f1.desenfileira())
+                if not f2.estaVazia():
+                    fres.enfileira(f2.desenfileira())
+                if f1.estaVazia() and f2.estaVazia():
+                    break
