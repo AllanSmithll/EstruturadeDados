@@ -1,5 +1,8 @@
+from typing import Any
+
+
 class ListaException(Exception):
-    def __init__(self, msg:str, codErro:int=0):
+    def __init__(self, msg: str, codErro: int = 0):
         # CodErro:
         # 0: posicao invalida
         # 1: chave de busca não encontrada
@@ -9,7 +12,7 @@ class ListaException(Exception):
 
 
 class No:
-    def __init__(self, carga: any):
+    def __init__(self, carga: Any):
         self.carga = carga
         self.prox = None
 
@@ -19,79 +22,78 @@ class No:
 
 class Lista:
     def __init__(self):
-        self.__start = None
+        self.__head = None
         self.__tamanho = 0
 
-    def estaVazia(self)->bool:
-        return self.__start == None
+    def estaVazia(self) -> bool:
+        return self.__head == None
 
-    def tamanho(self)->int:
+    def tamanho(self) -> int:
         return self.__tamanho
 
-    def __len__(self)->int:
-        return self.__tamanho
-
-    def elemento(self, posicao:int)->any:
+    def elemento(self, posicao: int) -> Any:
         '''
         Retorna a carga armazenada no nó indicado por "posicao"
         '''
         try:
             assert posicao > 0 and posicao <= self.__tamanho
             cont = 1
-            cursor = self.__start
-            while( cont < posicao):
+            cursor = self.__head
+            while (cont < posicao):
                 cursor = cursor.prox
                 cont += 1
 
             return cursor.carga
         except AssertionError:
-            raise ListaException(f'Posicao inválida para a fila atual com {len(self.__dados)} elementos')
-    
-    def busca(self, conteudo:any)->int:
-        cursor = self.__start
+            raise ListaException(
+                f'Posicao inválida para a fila atual com {self.tamanho()} elementos')
+
+    def busca(self, conteudo: Any) -> int:
+        cursor = self.__head
         cont = 1
-        while(cursor != None):
+        while (cursor != None):
             if cursor.carga == conteudo:
-                return  cont
+                return cont
             cont += 1
             cursor = cursor.prox
-        raise  ListaException(f'Valor {conteudo} não está na lista',1)
+        raise ListaException(f'Valor {conteudo} não está na lista', 1)
 
-    def modificar(self, posicao:int, conteudo: any):
+    def modificar(self, posicao: int, conteudo: Any):
         try:
             assert posicao > 0 and posicao <= self.__tamanho
             cont = 1
-            cursor = self.__start
-            while( cont < posicao):
+            cursor = self.__head
+            while (cont < posicao):
                 cursor = cursor.prox
                 cont += 1
 
             cursor.carga = conteudo
         except AssertionError:
-            raise ListaException(f'Posicao inválida para a lista atual com {len(self.__dados)} elementos')
+            raise ListaException(
+                f'Posicao inválida para a lista atual com {len(self)} elementos')
 
-    
-    def inserir(self, posicao:int, carga:any):
+    def inserir(self, posicao: int, carga: Any):
         try:
             assert posicao > 0 and posicao <= self.__tamanho + 1
 
             novo = No(carga)
+            # CONDICAO 1: insercao se a lista estiver vazia
             if (self.estaVazia()):
-                self.__start = novo
+                self.__head = novo
                 self.__tamanho += 1
                 return
-            
+
             # CONDICAO 2: insercao na primeira posicao em uma lista nao vazia
-            if ( posicao == 1):
-                novo.prox = self.__start
-                self.__start = novo
+            if (posicao == 1):
+                novo.prox = self.__head
+                self.__head = novo
                 self.__tamanho += 1
                 return
 
             # CONDICAO 3: insercao apos a primeira posicao em lista nao vazia
-            cursor = self.__start
+            cursor = self.__head
             contador = 1
-            while ( (contador < posicao-1) and  (cursor != None)):
+            while ((contador < posicao-1) and (cursor is not None)):
                 cursor = cursor.prox
                 contador += 1
 
@@ -100,53 +102,51 @@ class Lista:
             self.__tamanho += 1
 
         except TypeError:
-            raise ListaException(f'A posição deve ser um número inteiro')            
+            raise ListaException('A posição deve ser um número inteiro')
         except AssertionError:
-            raise ListaException(f'Posicao inválida.')
+            raise ListaException('Posicao inválida.')
         except:
-            raise
+            raise 
 
-    def remover(self, posicao:int)->any:
+    def remover(self, posicao: int) -> Any:
         try:
             assert posicao > 0 and posicao <= self.__tamanho
 
-            if( self.estaVazia() ):
-                raise ListaException(f'Não é possível remover de uma lista vazia')
+            if (self.estaVazia()):
+                raise ListaException(
+                    'Não é possível remover de uma lista vazia')
 
-            cursor = self.__start
+            cursor = self.__head
             contador = 1
 
-            while( contador <= posicao-1 ) :
+            while (contador <= posicao-1):
                 anterior = cursor
                 cursor = cursor.prox
-                contador+=1
+                contador += 1
 
             carga = cursor.carga
 
-            if( posicao == 1):
-                self.__start = cursor.prox
+            if (posicao == 1):
+                self.__head = cursor.prox
             else:
-                anterior.next = cursor.prox
+                anterior.prox = cursor.prox
 
             self.__tamanho -= 1
             return carga
-        
+
         except TypeError:
-            raise ListaException(f'A posição deve ser um número inteiro')            
+            raise ListaException(f'A posição deve ser um número inteiro')
         except AssertionError:
-            raise ListaException(f'A posicao deve ser um número entre 1 e {self.__tamanho}')
+            raise ListaException(
+                f'A posicao deve ser um número entre 1 e {self.__tamanho}')
         except:
             raise
 
-    
     def __str__(self):
         s = '[ '
-        cursor = self.__start
-        while(cursor != None):
+        cursor = self.__head
+        while (cursor != None):
             s += f'{cursor.carga} '
             cursor = cursor.prox
         s += ']'
         return s
-        
-
-
