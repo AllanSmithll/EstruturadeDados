@@ -76,7 +76,6 @@ class Lista:
             assert posicao > 0 and posicao <= self.__tamanho + 1
 
             novo = No(carga)
-            # CONDICAO 1: insercao se a lista estiver vazia
             if (self.estaVazia()):
                 self.__start = novo
                 self.__tamanho += 1
