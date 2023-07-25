@@ -13,7 +13,7 @@ posicionado na última posição
  O processo continua até n-i, até que todo o
 vetor esteja ordenado (i = 1, 2, 3, ...)'''
 
-def bolha(array): # Funão bolha
+def bolha(array): # Função bolha
     for i in range(len(array)-1, 0, -1):
         for j in range(0, i):
             if (array[j] > array[j+1]):
